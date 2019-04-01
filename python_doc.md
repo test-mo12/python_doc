@@ -8,7 +8,7 @@
 
 **variable types** are determined _dynamically_ by python, no need to set types of variables while declaring
 
-**strings** could be write within `' '`, `" "` or `""" """`
+**strings** could be written within `' '`, `" "` or `""" """`
 
 > to use `'` inside of string use double `"` and vice versa and to write multiple strings, `"""` should be used
 
@@ -48,12 +48,13 @@ all these variables above are _immutable_, which means the value of those could 
 
 - prints it's argument out to the terminal
 
-- goes to new line after printing, unless `end = ''` is declared
+- puts `\n` (new line) at the end of output string, unless `end = ""` is declared
 
 - takes different arguments: `string`, `ìnt`, `float`, `boolean`, `list`, `tuple`, `dictionary` etc...
 
 ```python
 print("some text")
+print("some text", end=" ")
 print('*' * 4) # prints 4 *
 print(4)
 ```
