@@ -282,12 +282,16 @@ else:
 ```python
 def function_name(parameters):
     pass
-    return value
+    # return value
 ```
 
 #### Parameter Type Annotation
 
-has no influence of parameter types, used just to show which types should be used for that parameter `def func(param1: int, param2: str) -> int` last int after arrow shows the type of return value
+has no influence of parameter types, used just to show which types should be used for that parameter
+
+`def func(param1: int, param2: str) -> int`
+
+> last `int` after arrow shows the type of return value
 
 #### Parameters
 
@@ -364,6 +368,8 @@ greet()
 ```
 
 > **BAD PRACTICE**: Using global variables
+
+\>>> _[FizzBuzz Exercise](playground/fizz_buzz.py)_
 
 ## Python Builtin Functions
 
