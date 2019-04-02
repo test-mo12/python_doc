@@ -277,6 +277,94 @@ else:
     print('you gave 3 false guesses -> game over!')
 ```
 
+### 1.12 Functions
+
+```python
+def function_name(parameters):
+    pass
+    return value
+```
+
+#### Parameter Type Annotation
+
+has no influence of parameter types, used just to show which types should be used for that parameter `def func(param1: int, param2: str) -> int` last int after arrow shows the type of return value
+
+#### Parameters
+
+default values can be defined for parameters so if no arguments is given in function call, default values will be used `def func(arg=10)`
+
+#### return
+
+by default, if there is no return statement in a function, python returns `None` as the return value for that function
+
+#### Arguments
+
+arguments have different forms:
+
+- positional arguments: `func(arg1, arg2, arg3)` the order of given arguments **matters**
+
+- keyword arguments: `func(arg2=2, arg3=5, arg1=10)` the order of given arguments **doesn't matter**
+
+##### Order of Arguments
+
+1. positional arguments
+2. keyword arguments
+
+```python
+# Function Definition
+def increment(number, by):
+    return number + by
+
+# Call the Function
+print(increment(3, 4))
+```
+
+#### Multiple Arguments
+
+```python
+def multiply(*params):
+    total = 1
+    for number in params:
+        total *= number
+    return total
+
+print(multiply(2, 3, 4, 5))
+```
+
+> by passing `*params` _with asterisk_ in function definition and multiple arguments in function call, python treats them as a `tuple` (immutable or readonly list)
+
+#### Multiple Keyword Arguments
+
+```python
+def save_user(**user):
+    print(user)
+    # print(user["id"])
+    # print(user["name"])
+
+print(save_user(id=3, name='John'))  # {'id: 3, 'name': 'John'}
+```
+
+> by passing `**params` _with double asterisk_ in function definition and multiple keyword arguments in function call, python treats them as a `dictionary` (set of key value pairs)
+
+### 1.13 Scopes
+
+- local: function scope _inside a funntion_
+- global: file scope _anywhere in the file_
+
+local variables have higher priority, so if two variables with the same name are defined, one in global scope and the other in function scope, working in that functions means the other variable inside the function and it will not use the global one. To say ecplicitely to use the global variable it should be written with `global` keyword, so python knows in this function the global one is used
+
+```python
+message = "hello"
+
+def greet():
+    global message
+    print(message)
+
+greet()
+```
+
+> **BAD PRACTICE**: Using global variables
+
 ## Python Builtin Functions
 
 > ref: [python 3 builtin functions](https://docs.python.org/3/library/functions.html)
