@@ -402,15 +402,15 @@ print(len(numbers)) # 10
 ```python
 letters = ["a", "b", "c", "d", "e", "f", "g"]
 letters[2] = "C"
-print(letters[0])
-print(letters[-1])
-print(letters[:])
-print(letters[2:])
-print(letters[:4])
-print(letters[1:3])
-print(letters[1::2])
-print(letters[::-1])
-print(letters[:-2:3])
+print(letters[0])       # a
+print(letters[-1])      # g
+print(letters[:])       # ['a', 'b', 'C', 'd', 'e', 'f', 'g']
+print(letters[2:])      # ['C', 'd', 'e', 'f', 'g']
+print(letters[:4])      # ['a', 'b', 'C', 'd']
+print(letters[1:3])     # ['b', 'C']
+print(letters[1::2])    # ['b', 'd', 'f']
+print(letters[::-1])    # ['g', 'f', 'e', 'd', 'C', 'b', 'a']
+print(letters[:-2:3])   # ['a', 'd']
 ```
 
 ## Python Builtin Functions
