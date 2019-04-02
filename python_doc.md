@@ -62,6 +62,7 @@ print(course.strip())           # trimming white space around the string
 print(course.find("Pro"))       # to find index of the beginning of a substring (Case Sensitive)
 print(course.replace("P", "C")) # to replace a substing
 print("Programming" in course)  # to check whether a substring exists in this string
+print(course.startswith('P')    # checks whether the string starts with a substring
 ```
 
 ### 1.3 Numbers
@@ -213,6 +214,34 @@ else:
 
 ### 1.11 For Loops
 
+to iterate over an iterable object like strings, lists, sequence of numbers etc...
+
+`for`
+
+```python
+for c in "Python":
+    print(c, end=" ")       # output -> P y t h o n
+print('...')
+for x in [12, 4, -4]:
+    print(x, end=" ")       # output -> 12 4 -4
+print('...')
+for i in range(1, 9, 2):    # output -> 1 3 5 7
+    print(i, end=" ")
+print('...')
+```
+
+`for...else...`
+
+```python
+names = ['johen', 'mary']
+for name in names:
+    if name.startswith('j'):
+        print('found')
+        break
+else:
+    print('not found')
+```
+
 ## Python Builtin Functions
 
 > ref: [python 3 builtin functions](https://docs.python.org/3/library/functions.html)
@@ -245,6 +274,20 @@ len([1, 4, 5])
 PI = 3.14
 print(round(PI))    # rounds the number -> 3
 print(abs(PI))      # absolute value
+```
+
+`range([start,] stop[, step])`: gives a sequence of numbers
+
+```python
+for i in range(9):
+    print(i, end=' ')       # 0 1 2 3 4 5 6 7 8
+print('...')
+for i in range(2, 9):
+    print(i, end=' ')       # 2 3 4 5 6 7 8
+print('...')
+for i in range(1, 9, 2):
+    print(i, end=' ')       # 1 3 5 7
+print('...')
 ```
 
 ## Hints
