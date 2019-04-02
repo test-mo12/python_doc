@@ -2,7 +2,11 @@
 
 Documentation and Learning Material to Learn Python Programming Language
 
-> - ref: [NOTES](python_doc.md)
+## Links:
+
+- [NOTES](python_doc.md)
+
+- [Cheatsheets](cheatsheet)
 
 ## Python Learning Plan
 
