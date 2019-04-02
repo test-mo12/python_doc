@@ -155,7 +155,22 @@ elif not a:
     print("NOT")
 ```
 
+> **`pass` Keyword** is a place holder, whenever is needed to have a block without codes inside, pass keyword can be used to show this block does nothing and is empty. _without pass an error will be raised for an empty block of code_
+
 ### 1.10 Conditional Statements
+
+#### 1.10.1 `if...elif...else`
+
+```python
+if condition1:
+    pass
+elif condition2:
+    pass
+else:
+    pass
+```
+
+example:
 
 ```python
 age = 28
@@ -168,19 +183,7 @@ else:
 print("finished")
 ```
 
-#### `pass` Keyword
-
-is a place holder, whenever is needed to have a block without codes inside, pass keyword can be used to show this block does nothing and is empty. _without pass an error will be raised for an empty block of code_
-
-```python
-a = True
-if a:
-    pass
-else:
-    print("something")
-```
-
-#### Ternary Operator
+#### 1.10.2 Ternary Operator
 
 very useful form of short if else statements
 
@@ -212,11 +215,20 @@ else:
     result = f"your name is {name.strip()}"
 ```
 
-### 1.11 For Loops
+### 1.11 Loops
+
+#### 1.11.1 `for...else...`
 
 to iterate over an iterable object like strings, lists, sequence of numbers etc...
 
-`for`
+```python
+for item in iterableitems:
+    pass
+else:
+    pass
+```
+
+example:
 
 ```python
 for c in "Python":
@@ -228,11 +240,8 @@ print('...')
 for i in range(1, 9, 2):    # output -> 1 3 5 7
     print(i, end=" ")
 print('...')
-```
 
-`for...else...`
 
-```python
 names = ['johen', 'mary']
 for name in names:
     if name.startswith('j'):
@@ -240,6 +249,32 @@ for name in names:
         break
 else:
     print('not found')
+```
+
+#### 1.11.2 `while...else...`
+
+```python
+while condition:
+    pass
+else:
+    pass
+```
+
+example:
+
+```python
+guess = 0
+answer = 5
+count = 0
+max_guess = 3
+while count < max_guess:
+    guess = int(input("Guess > "))
+    count += 1
+    if guess == answer:
+        print("you won")
+        break
+else:
+    print('you gave 3 false guesses -> game over!')
 ```
 
 ## Python Builtin Functions

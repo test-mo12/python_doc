@@ -2,7 +2,7 @@
 
 Documentation and Learning Material to Learn Python Programming Language
 
-## Links:
+## Links
 
 - [NOTES](python_doc.md)
 
