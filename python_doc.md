@@ -391,7 +391,7 @@ print(chars)        # ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!
 print(len(numbers)) # 10
 ```
 
-## 2.2 List Operations
+### 2.2 List Operations
 
 - list items or elements can be accessed by their indices
 
@@ -412,6 +412,8 @@ print(letters[1::2])    # ['b', 'd', 'f']
 print(letters[::-1])    # ['g', 'f', 'e', 'd', 'C', 'b', 'a']
 print(letters[:-2:3])   # ['a', 'd']
 ```
+
+### 2.3 Lists Unpacking
 
 ## Python Builtin Functions
 
