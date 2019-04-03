@@ -1,8 +1,6 @@
-# Python_doc
+# 1. Basics
 
-## 1. Basics
-
-### 1.1 Variables
+## 1.1 Variables
 
 Naming Convention
 
@@ -39,7 +37,7 @@ id(age)                           # to get the address of memory location where 
 
 > all these variables above are _immutable_, which means the value of those could not be changed in that refrence, so when they're changed python will automatically allocate a new memory location and refrence that variable to the new refrence. but _lists_ are mutable so when the value of an element in them is changed, it will be affected in that place(reference)
 
-### 1.2 Strings
+## 1.2 Strings
 
 escape characters: `\'`, `\"`, `\\`, `\n`
 
@@ -51,7 +49,7 @@ last = 'Smith'
 print(f"Hi I am {first} {last}") # any valid statement can go between {}
 ```
 
-#### String Methods
+### String Methods
 
 ```python
 course = " Python programming course"
@@ -65,7 +63,7 @@ print("Programming" in course)  # to check whether a substring exists in this st
 print(course.startswith('P')    # checks whether the string starts with a substring
 ```
 
-### 1.3 Numbers
+## 1.3 Numbers
 
 ```python
 x = 10          # decimal
@@ -79,7 +77,7 @@ c = 1 + 2j      # complex number -> 1 + 2i
 print(c)        # prints complex format
 ```
 
-### 1.4 Arithmetic Operators
+## 1.4 Arithmetic Operators
 
 ```python
 x = 10 + 3
@@ -96,7 +94,7 @@ x *= 10         # -> x = x * 10
 x /= 10         # -> x = x / 10
 ```
 
-### 1.5 Math Module
+## 1.5 Math Module
 
 > ref: [python 3 math module](https://docs.python.org/3/library/math.html)
 
@@ -106,7 +104,7 @@ PI = 3.14
 print(math.floor(PI))
 ```
 
-### 1.6 Type Conversion
+## 1.6 Type Conversion
 
 ```python
 x = input("x: ")  # x -> string
@@ -116,7 +114,7 @@ y = bool(x)
 y = str(x)
 ```
 
-### 1.7 Falsy Values
+## 1.7 Falsy Values
 
 Any value other than these is treated as `True`
 
@@ -127,7 +125,7 @@ Any value other than these is treated as `True`
 - `[]` _empty list_
 - `None` _None value_
 
-### 1.8 Comparison Operators
+## 1.8 Comparison Operators
 
 ```python
 a = 8
@@ -142,7 +140,7 @@ print(a != b)       # not equal
 print(a <= b < b )  # chaining comparison operators like real math
 ```
 
-### 1.9 Logical Operators
+## 1.9 Logical Operators
 
 ```python
 a = True
@@ -157,9 +155,9 @@ elif not a:
 
 > **`pass` Keyword** is a place holder, whenever is needed to have a block without codes inside, pass keyword can be used to show this block does nothing and is empty. _without pass an error will be raised for an empty block of code_
 
-### 1.10 Conditional Statements
+## 1.10 Conditional Statements
 
-#### 1.10.1 `if...elif...else`
+### 1.10.1 `if...elif...else`
 
 ```python
 if condition1:
@@ -183,7 +181,7 @@ else:
 print("finished")
 ```
 
-#### 1.10.2 Ternary Operator
+### 1.10.2 Ternary Operator
 
 very useful form of short if else statements
 
@@ -207,7 +205,7 @@ name = " " # a string with a whitespace inside is not an empty string, to avoid 
 
 result = "Empty String" if not name.strip() else f"your name is {name.strip()}"
 
-### statement above is completely equivalent to this if statement below
+## statement above is completely equivalent to this if statement below
 
 if not name.strip():
     result = "Empty String"
@@ -215,9 +213,9 @@ else:
     result = f"your name is {name.strip()}"
 ```
 
-### 1.11 Loops
+## 1.11 Loops
 
-#### 1.11.1 `for...else...`
+### 1.11.1 `for...else...`
 
 to iterate over an iterable object like strings, lists, sequence of numbers etc...
 
@@ -370,99 +368,3 @@ greet()
 > **BAD PRACTICE**: Using global variables
 
 \>>> [FizzBuzz Exercise](playground/fizz_buzz.py)
-
-## 2. Data Structures
-
-### 2.1 Lists
-
-a mutable iterable sequense of data
-
-```python
-names = ['John', 'Mary', 'David']
-ones = [1] * 3
-matrix = [[0, 1], [2, 3]]
-combined = names + ones
-numbers = list(range(10))
-chars = list("hello world!")
-print(combined)     # ['John', 'Mary', 'David', 1, 1, 1]
-print(matrix)       # [[0, 1], [2, 3]]
-print(numbers)      # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-print(chars)        # ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!']
-print(len(numbers)) # 10
-```
-
-### 2.2 List Operations
-
-- list items or elements can be accessed by their indices
-
-- \+ indices starts from 0 (beginning of list)
-
-- \- indices starts from -1 (end of list)
-
-```python
-letters = ["a", "b", "c", "d", "e", "f", "g"]
-letters[2] = "C"
-print(letters[0])       # a
-print(letters[-1])      # g
-print(letters[:])       # ['a', 'b', 'C', 'd', 'e', 'f', 'g']
-print(letters[2:])      # ['C', 'd', 'e', 'f', 'g']
-print(letters[:4])      # ['a', 'b', 'C', 'd']
-print(letters[1:3])     # ['b', 'C']
-print(letters[1::2])    # ['b', 'd', 'f']
-print(letters[::-1])    # ['g', 'f', 'e', 'd', 'C', 'b', 'a']
-print(letters[:-2:3])   # ['a', 'd']
-```
-
-### 2.3 Lists Unpacking
-
-## Python Builtin Functions
-
-> ref: [python 3 builtin functions](https://docs.python.org/3/library/functions.html)
-
-`print()`:
-
-- prints it's argument out to the terminal
-
-- puts `\n` (new line) at the end of output string, unless `end = ""` is declared
-
-- takes different arguments: `string`, `int`, `float`, `boolean`, `list`, `tuple`, `dictionary` etc...
-
-```python
-print("some text")
-print("some text", end=" ")
-print('*' * 4) # prints 4 *
-print(4)
-```
-
-`len()`: gives the length of any object
-
-```python
-len("some string")
-len([1, 4, 5])
-```
-
-`round()`, `abs()`
-
-```python
-PI = 3.14
-print(round(PI))    # rounds the number -> 3
-print(abs(PI))      # absolute value
-```
-
-`range([start,] stop[, step])`: gives a sequence of numbers
-
-```python
-for i in range(9):
-    print(i, end=' ')       # 0 1 2 3 4 5 6 7 8
-print('...')
-for i in range(2, 9):
-    print(i, end=' ')       # 2 3 4 5 6 7 8
-print('...')
-for i in range(1, 9, 2):
-    print(i, end=' ')       # 1 3 5 7
-print('...')
-```
-
-## Hints
-
-> - python is case sensitive language `True` and `true` are not the same

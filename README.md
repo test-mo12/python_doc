@@ -4,7 +4,7 @@ Documentation and Learning Material to Learn Python Programming Language
 
 ## Links
 
-- [NOTES](python_doc.md)
+- [Appendix](appendix.md)
 
 - [Cheatsheets](cheatsheet)
 
@@ -20,7 +20,7 @@ Documentation and Learning Material to Learn Python Programming Language
    - beautiful soup
    - web scraping using python for beginners
 4. work with some other libraries
-   - how to open files such as: pcab (wireshark), excel or pdf files etc...
+   - how to open files such as: pcap (wireshark), excel or pdf files etc...
 5. regex(pattern matching)
 6. web development: `django` _optional_
 7. penetration testing _optional_
