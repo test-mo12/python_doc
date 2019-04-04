@@ -123,3 +123,156 @@ if 'o' in letters:
 
 print(letters.count('a'))
 ```
+
+## 2.7 Sorting Lists
+
+- `.sort()`: sorts a list in ascending order
+  - to sort in descending order just pass the `reverse=True` argument
+  - `.sort()` will modify the original list. to have a sorted copy of a list use builtin function `sorted()`
+
+```python
+numbers = [2, 3, 6, 12, 76, -15]
+numbers.sort()
+print(numbers)
+numbers.sort(reverse=True)
+print(numbers)
+```
+
+## 2.8 Lambda Functions
+
+a simple one line anynomus function that we can pass to other functions
+
+`lambda parameters:expressen`
+
+```python
+items = [
+    ("product1", 32),
+    ("product2", 8),
+    ("product3", 14)
+]
+
+items.sort(key=lambda item: item[1])    # sort based on second item in tuple
+print(items)                            # [('product2', 8), ('product3', 14), ('product1', 32)]
+```
+
+## 2.9 Map Function
+
+to transform an iterable object or extract some part of it
+
+```python
+items = [
+    ("product1", 32),
+    ("product2", 8),
+    ("product3", 14)
+]
+
+prices = list(map(lambda item: item[1], items))
+print(prices)       # [32, 8, 14]
+```
+
+## 2.10 Filter Function
+
+to extract some items out of an object with a filter
+
+```python
+items = [
+    ("product1", 32),
+    ("product2", 8),
+    ("product3", 14)
+]
+
+filtered_items = list(filter(lambda item: item[1] >= 10, items))
+print(filtered_items)       # [('product1', 32), ('product3', 14)]
+```
+
+## 2.11 List Comprehensions (alternative for map and filter)
+
+`[expression for item in items]`
+
+```python
+items = [
+    ("product1", 32),
+    ("product2", 8),
+    ("product3", 14)
+]
+
+# filtered_items = list(filter(lambda item: item[1] >= 10, items))
+filtered_items = [item for item in items if item[1] >= 10]
+print(filtered_items)       # [('product1', 32), ('product3', 14)]
+
+# prices = list(map(lambda item: item[1], items))
+prices = [item[1] for item in items]
+print(prices)               # [32, 8, 14]
+```
+
+## 2.12 Zip Function
+
+```python
+list1 = [1, 2, 3]
+list2 = [10, 20, 30]
+
+combined_list = list(zip("abc", list1, list2))
+print(combined_list)        # [('a', 1, 10), ('b', 2, 20), ('c', 3, 30)]
+```
+
+## 2.13 Stacks
+
+LIFO: Last In - First Out
+
+a list can be treated as a stack
+
+- `.append()` add item to top of stack
+
+- `.pop()` remove item from top of stack
+
+- `var[-1]` get item from top of stack using -1 index
+
+```python
+x = []
+x.append(1)
+x.append(2)
+x.append(3)
+x.pop()
+if x:               # if x is not an empty list
+    print(x[-1])    # 2
+```
+
+## 2.14 Queues
+
+FIFO: First In - First Out
+
+```python
+from collections import deque
+queue = deque([])
+queue.append(1)
+queue.append(2)
+queue.append(3)
+print(queue)        # deque([1, 2, 3])
+queue.popleft()     # removes an item from ends of the list
+print(queue)        # deque([2, 3])
+if not queue:
+    print("empty")
+```
+
+## 2.15 Tuple
+
+a readonly list - can not be modified
+
+```python
+tuple1 = 1,
+tuple2 = 1, 2
+tuple3 = (1, 2)
+tuple4 = (1, 2) + (3, 4)
+tuple5 = (1, 2) * 3
+tuple6 = tuple([2, 4])
+
+print(tuple1)
+print(tuple2)
+print(tuple3)
+print(tuple4)
+print(tuple5)
+print(tuple6)
+
+print(tuple5[1:3])
+
+```

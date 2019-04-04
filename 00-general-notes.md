@@ -48,6 +48,13 @@ for i in range(1, 9, 2):
 print('...')
 ```
 
+`sorted()`: takes an iterable object and returns it sorted
+
+```python
+numbers = [2, 3, 6, 12, 76, -15]
+x = sorted(numbers)
+```
+
 ## Hints
 
 - python is case sensitive language `True` and `true` are not the same
