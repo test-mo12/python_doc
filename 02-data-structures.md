@@ -266,15 +266,156 @@ tuple4 = (1, 2) + (3, 4)
 tuple5 = (1, 2) * 3
 tuple6 = tuple([2, 4])
 
-print(tuple1)
-print(tuple2)
-print(tuple3)
-print(tuple4)
-print(tuple5)
-print(tuple6)
-
-print(tuple5[1:3])
+print(tuple1)       # (1,)
+print(tuple2)       # (1, 2)
+print(tuple3)       # (1, 2)
+print(tuple4)       # (1, 2, 3, 4)
+print(tuple5)       # (1, 2, 1, 2, 1, 2)
+print(tuple6)       # (2, 4)
+print(tuple5[1:3])  # (2, 1)
 
 x, y = tuple3       # unpacking tuple
 
+if 2 in tuple5:
+    print("exists")
 ```
+
+## 2.16 Swapping Variables
+
+using tuple concept - _define a tuple and unpack it_
+
+```python
+x = 10
+y = 11
+x, y = y, x     # x, y = (y, x)
+```
+
+## 2.17 Arrays
+
+behaves similar to lists, used for large number of data, perfomes faster and optimized
+
+> ref: [Typecodes](https://docs.python.org/3/library/array.html)
+
+`array(typecode, list)`
+
+```python
+from array import array
+numbers = array('i', [1, 2, 3])
+```
+
+## 2.18 Sets
+
+a collection with no duplicates
+
+- does not support indexing
+- unordered not in sequence
+
+```python
+numbers = [1, 12, 2, 1, 4, 12, 2, 2, 1, 4, 6]
+a = {1, 7, 4, 9}
+uniques = set(numbers)
+uniques.add(10)
+uniques.remove(4)
+
+print(uniques)          # {1, 2, 6, 10, 12}
+print(len(uniques))     # 5
+
+# union (all from uniques and a)
+print(uniques | a)          # {1, 2, 6, 7, 9, 10, 12}
+
+# intersect (just ones in both uniques and a)
+print(uniques & a)          # {1, 12}
+
+# difference (in uniques but not in a)
+print(uniques - a)          # {2, 10, 6}
+
+# symatric difference (either in uniques or in a, not in both)
+print(uniques ^ a)          # {2, 6, 7, 9, 10}
+
+if 12 in uniques & a:
+    print("12 in both")
+```
+
+## 2.19 Dictionaries
+
+collection of key, value pairs
+
+```python
+point1 = {'x': 1, 'y': 2}
+point2 = dict(x=3, y=4)
+
+print(point1)                   # {'x': 1, 'y': 2}
+print(point2)                   # {'x': 3, 'y': 4}
+print(point1['x'])              # 1
+point1['z'] = 6
+print(point1)                   # {'x': 1, 'y': 2, 'z': 6}
+print(point1['a'])              # -> KeyError
+
+if 'a' in point1:
+    print(point1['a'])
+# OR
+print(point1.get('a'))          # None
+print(point1.get('a', 0))       # 0 -> default value, if the key not exists
+
+del point1['x']
+print(point1)                   # {'y': 2, 'z': 6}
+
+for key in point1:
+    print(key, point1[key])     # y 2  z 6
+
+for x in point1.items():
+    print(x)                    # ('y', 2) ('z', 6)
+
+for key, value in point1.items():
+    print(key, value)           # y 2  z 6
+```
+
+## 2.20 Dictionary Comprehensions
+
+```python
+values1 = [x**2 for x in range(5)]
+values2 = {x**2 for x in range(5)}
+values3 = {x: x**2 for x in range(5)}
+
+print(values1)      # [0, 1, 4, 9, 16] -> list
+print(values2)      # {0, 1, 4, 9, 16} -> set
+print(values3)      # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16} -> dictionary
+```
+
+## 2.21 Generators
+
+iterable object, used for big amount of values, in each step it generates the next value instead of generating all of them and storing in memory
+
+```python
+from sys import getsizeof
+listValues = [x**2 for x in range(50000)]
+generatorValues = (x**2 for x in range(50000))
+
+print("list:", getsizeof(listValues))               # list: 406496
+print("generator:", getsizeof(generatorValues))     # generator: 120
+```
+
+## 2.22 Unpacking Operator `*`
+
+```python
+numbers = [1, 2, 4]
+print(numbers)              # [1, 2, 4]
+print(*numbers)             # 1 2 4
+
+values1 = [*range(6), *"hello"]
+print(values1)              # [0, 1, 2, 3, 4, 5, 'h', 'e', 'l', 'l', 'o']
+
+first_list = [1, 2, 3]
+second_list = [3, 4]
+values2 = [*first_list, *"a", *second_list]
+print(values2)              # [1, 2, 3, 'a', 3, 4]
+
+first_dict = {'x': 3, 'y': 4}
+second_dict = {'x': 23, 'z': 7}
+values3 = {**first_dict, **second_dict, 'p': 43}
+print(values3)              # {'x': 23, 'y': 4, 'z': 7, 'p': 43}
+```
+
+## Exercise
+
+- [Most Frequent Character](playground/most_frequent_char.py)
