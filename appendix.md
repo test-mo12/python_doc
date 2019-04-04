@@ -7,3 +7,5 @@
 ## [02. Data Structures](02-data-structures.md)
 
 ## [03. Exceptions](03-exceptions.md)
+
+## [04. Classes](04-classes.md)
