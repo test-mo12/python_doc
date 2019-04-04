@@ -275,4 +275,6 @@ print(tuple6)
 
 print(tuple5[1:3])
 
+x, y = tuple3       # unpacking tuple
+
 ```

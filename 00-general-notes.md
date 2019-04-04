@@ -50,6 +50,8 @@ print('...')
 
 `sorted()`: takes an iterable object and returns it sorted
 
+- to reverse the sort _descinding_
+
 ```python
 numbers = [2, 3, 6, 12, 76, -15]
 x = sorted(numbers)
