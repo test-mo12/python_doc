@@ -5,3 +5,5 @@
 ## [01. Basics](01-basics.md)
 
 ## [02. Data Structures](02-data-structures.md)
+
+## [03. Exceptions](03-exceptions.md)
