@@ -367,4 +367,4 @@ greet()
 
 > **BAD PRACTICE**: Using global variables
 
-\>>> [FizzBuzz Exercise](playground/fizz_buzz.py)
+\>>> [FizzBuzz Exercise](../playground/fizz_buzz.py)
