@@ -162,7 +162,118 @@ point2 = Point(4, 8)
 print(point1 + point2)     # (7, 13)
 ```
 
+## 4.8 Making Custom Container
+
+building tag container with these options:
+
+- add a new tag (not case sensitive)
+
+- retrieving value of a tag
+
+- setting a value for a tag
+
+- retrieving number of all tags
+
+- make it iterable, so it could be iterated through loops
 
 ```python
+class TagCloud:
+    def __init__(self):
+        self.tags = dict()
 
+    def __len__(self):
+        return len(self.tags)
+
+    def __getitem__(self, tag):
+        return self.tags.get(tag.lower(), 0)
+
+    def __setitem__(self, tag, count):
+        self.tags[tag.lower()] = count if count > 0 else 0
+
+    def add(self, tag):
+        self.tags[tag.lower()] = self.tags.get(tag.lower(), 0) + 1
+
+    def __iter__(self):
+        return iter(self.tags)
+
+    def __str__(self):
+        return str(self.tags)
+
+tags = TagCloud()
+tags.add("python")
+tags.add("Python")
+tags.add("PythoN")
+
+tags["javascript"] = 2
+print(f"-> tags: {tags}")               # -> tags: {'python': 3, 'javascript': 2}
+print(f"-> length: {len(tags)}")        # -> length: 2
+for tag in tags:
+    print(f"-> {tag}: {tags[tag]}")     # -> python: 3  -> javascript: 2
+print(f"-> c++: {tags['c++']}")         # -> c++: 0
+```
+
+## 4.9 Private Members
+
+```python
+class TagCloud:
+    def __init__(self):
+        self.__tags = dict()            # __ -> makes conventionally this variable private, not really
+
+    def __len__(self):
+        return len(self.__tags)
+
+    def __getitem__(self, tag):
+        return self.__tags.get(tag.lower(), 0)
+
+    def __setitem__(self, tag, count):
+        self.__tags[tag.lower()] = count if count > 0 else 0
+
+    def add(self, tag):
+        self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
+
+    def __iter__(self):
+        return iter(self.__tags)
+
+    def __str__(self):
+        return str(self.__tags)
+
+
+tags = TagCloud()
+tags.add("python")
+tags.add("Python")
+tags.add("PythoN")
+
+tags["javascript"] = 2
+print(f"-> tags: {tags}")               # -> tags: {'python': 3, 'javascript': 2}
+print(f"-> length: {len(tags)}")        # -> length: 2
+for tag in tags:
+    print(f"-> {tag}: {tags[tag]}")     # -> python: 3  -> javascript: 2
+print(f"-> c++: {tags['c++']}")         # -> c++: 0
+
+print(tags.__dict__)                    # a dictionary with all attributes of object inside
+print(tags._TagCloud__tags)             # access to private member __tags
+```
+
+## 4.10 Properties
+
+```python
+class Product:
+    def __init__(self, price=0):
+        self.price = price
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, value):
+        if value < 0:
+            raise ValueError("price can not be negative")
+        self.__price = value
+
+prod = Product()
+print(prod.price)       # 0
+# prod.price = -10      # raise an error
+prod.price = 25
+print(prod.price)       # 25
 ```
