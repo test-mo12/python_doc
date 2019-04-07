@@ -277,3 +277,100 @@ print(prod.price)       # 0
 prod.price = 25
 print(prod.price)       # 25
 ```
+
+## 4.11 Inheritance
+
+```python
+# Animal: Parent, Base Class
+# Mammal or Fish: Child, Sub Class
+class Animal:
+    def __init__(self):
+        self.age = 1
+
+    def eat(self):
+        print("eat")
+
+
+class Mammal(Animal):
+    def walk(self):
+        print("walk")
+
+
+class Fish(Animal):
+    def swim(self):
+        print("swim")
+
+
+cat = Mammal()
+catfish = Fish()
+cat.eat()               # eat
+cat.walk()              # walk
+print(cat.age)          # 1
+catfish.eat()           # eat
+catfish.swim()          # swim
+print(catfish.age)      # 1
+```
+
+## 4.12 Method Overriding and Super Class
+
+with `super()` super or base class can be accessed
+
+```python
+class Animal:
+    def __init__(self):
+        self.age = 1
+
+    def eat(self):
+        print("eat")
+
+
+class Mammal(Animal):
+    def __init__(self):
+        super().__init__()
+        self.weight = 2
+
+    def walk(self):
+        print("walk")
+
+
+cat = Mammal()
+print(cat.age)          # 1
+print(cat.weight)       # 2
+```
+
+## 4.13 Multi-Level and Multiple Inheritance
+
+> BAD PRACTISE: using them in unnecessary situations, because they add complexity to the code.
+
+> multiple inheritance could be used for instance while inheriting from different classes with different attributes and methods to bring their features in. NOT by overriding all their features 
+
+\>>> [Inheritance Example](../files/py/inheritance_ex.py)
+
+\>>> [Polymorphism Example](../files/py/polymorphism_ex.py)
+
+## 4.14 Duck Typing
+
+in python there is actually no need for abstracting methods or classes, because python is a dynamic language and as long as the called methods exist, everything's good
+
+so one equivalent for the last example _[Polymorphism Example](../files/py/polymorphism_ex.py)_ is this [Duck Typing Example](../files/py/duck_typing_ex.py)
+
+## 4.15 Data Classes
+
+if a class has just properties and no methods, it should be defined as a namedtuple. much easier and cleaner
+
+- namedtuples are immutable (unchangeable) so when created can not be modified
+
+```python
+from collections import namedtuple
+
+Point = namedtuple("Point", ["x", "y"])
+
+p1 = Point(x=3, y=5)
+p2 = Point(x=3, y=5)
+p3 = Point(x=2, y=7)
+
+print(p3)               # Point(x=2, y=7)
+print(p1 == p2)         # True
+print(p3.x)             # 2
+```
+
