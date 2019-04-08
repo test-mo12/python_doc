@@ -60,3 +60,9 @@ x = sorted(numbers)
 ## Hints
 
 - python is case sensitive language `True` and `true` are not the same
+
+- String Prefixes:
+
+    - f"string" : _formatted string
+    
+    - r"string"_: _raw string, no escape characters needed_
