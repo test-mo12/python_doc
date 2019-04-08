@@ -17,3 +17,7 @@ Documentation and Learning Material to Learn Python Programming Language
 3. [Exceptions](text/03-exceptions.md)
 
 4. [Classes](text/04-classes.md)
+
+5. [Modules and Packages](text/05-modules.md)
+
+6. [Standard Libraries](text/06-standard_libraries.md)
